@@ -1,0 +1,45 @@
+{
+    "function":"sample-text-function",
+
+    "greet":
+        {
+            "text":"Hello! I'm Elth. I'm your personal assistant."
+        }
+    ,
+
+    "questions":[
+        {
+            "text":"Before starting please tell me your first name.",
+            "var":"first_name"
+        },
+        {
+            "text":"Please tell me your last name.",
+            "var":"last_name"
+        },
+        {
+            "text":"And your gender?",
+            "options":[
+                "Male",
+                "female"
+            ],
+            "var":"gender"
+        },
+        {
+            "text":"May I know your age?",
+            "var":"age",
+            "conditions":[
+                [
+                    "isdigit"
+                ]
+            ],
+            "text_new":"I couldn't quite get how that response can be your age :/ Please enter your valid age.",
+            "var_new":"age"
+        }
+    ],
+
+    "final":
+        {
+            "text":"Congratulations! Registration Successful."
+        }
+    
+}

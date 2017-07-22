@@ -1,0 +1,88 @@
+{
+  "stage1": {
+    "Bot Says": [
+      {
+        "message": {
+          "text": "Hello! I'm Elth. I'm your personal assistant."
+        }
+      }
+    ]
+  },
+  "stage2": {
+    "Bot Says": [
+      {
+        "message": {
+          "text": "Before starting please tell me your first name."
+        }
+      }
+    ],
+    "User Says": [
+      {
+        "first_name": "Pratyush"
+      }
+    ]
+  },
+  "stage3": {
+    "Bot Says": [
+      {
+        "message": {
+          "text": "Please tell me your last name."
+        }
+      }
+    ],
+    "User Says": [
+      {
+        "last_name": "Prakhar"
+      }
+    ]
+  },
+  "stage4": {
+    "Bot Says": [
+      {
+        "message": {
+          "text": "And your gender?",
+          "quick_replies": [
+            {
+              "content_type": "text",
+              "title": "Male",
+              "payload": "Male"
+            },
+            {
+              "content_type": "text",
+              "title": "Female",
+              "payload": "female"
+            }
+          ]
+        }
+      }
+    ],
+    "User Says": [
+      {
+        "gender": "Male"
+      }
+    ]
+  },
+  "stage5": {
+    "Bot Says": [
+      {
+        "message": {
+          "text": "May I know your age?"
+        }
+      }
+    ],
+    "User Says": [
+      {
+        "age": "21"
+      }
+    ]
+  },
+  "stage6": {
+    "Bot Says": [
+      {
+        "message": {
+          "text": "Congratulations! Registration Successful."
+        }
+      }
+    ]
+  }
+}
