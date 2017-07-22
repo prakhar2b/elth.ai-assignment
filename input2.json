@@ -1,0 +1,84 @@
+{
+    "function":"sample-text-function",
+    "greet":
+        {
+            "text":"Hello! I'm Elth. I'm your personal assistant."
+        }
+    ,
+    "questions":[
+        {
+            "text":"Before starting please tell me your first name",
+            "var":"first_name"
+        },
+        {
+            "text":"Please tell me your last name",
+            "var":"last_name"
+        },
+        {
+            "text":"And your gender?",
+            "options":[
+                "Male",
+                "female"
+            ],
+            "var":"gender"
+        },
+        {
+            "text":"May I know your age?",
+            "var":"age",
+            "conditions":[
+                [
+                    "isdigit"
+                ]
+            ],
+            "text_new":"I couldn't quite get how that response can be your age :/ Please enter your valid age.",
+            "var_new":"age"
+        }
+    ],
+    "final":
+        {
+            "text":"Congratulations! Registration Successful."
+        }
+    ,
+    "demo_greet":
+        {
+            "text": "Hello %s , How are you? For a sample of my work I can show you how to make a transpose of a 3X3 matrix.",
+            "formula":"first_name + ' ' +last_name", 
+            "var":"full_name"
+        }
+    ,
+    "demo":[
+        {
+            "text":"Enter the first row of the matrix(3 integers space seperated).",
+            "var":"rows[0]"
+        },
+        {
+            "text":"Enter the second row of the matrix(3 integers space seperated).",
+            "var":"rows[1]"
+        },
+        {
+            "text":"Enter the third row of the matrix(3 integers space seperated).",
+            "var":"rows[2]"
+        },
+        {
+            "calculated_variable":"True",
+            "formula":"[map(int, i.split()) for i in row]",
+            "var":"matrix"
+        },
+        {
+            "calculated_variable":"True",
+            "formula":"[[matrix[j][i] for j in xrange(3)] for i in xrange(3)]",
+            "var":"t_matrix"
+        }
+    ],
+    "demo_final":{
+        "text":"This is the transpose of the input matrix",
+        "list_var":"True",
+        "list_length":"3",
+        "instruction":"Row %s : %s",
+        "instruction_var":[
+            "i+1",
+            "str(t_matrix[i])"
+        ]
+
+    }
+}
