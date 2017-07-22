@@ -32,6 +32,36 @@ def check_option(a):
 
 	return a
 
+def demo(input_file, user):
+	full_name = user['Profile']['first_name'] + ' ' + user['Profile']['last_name']
+
+	if 'demo_greet' in input_file:
+		demo_greetings = input_file['demo_greet']['text']
+		print(demo_greetings % full_name)
+
+	if 'demo' in input_file:
+		row = []
+		demo_list = input_file['demo']
+		for n in range(len(demo_list)):
+			if 'text' in demo_list[n]:
+				row.append([ item for item in input(demo_list[n]['text'] + ' :\n').split()])
+
+		matrix = row
+
+		iter_ = int(input_file['demo_final']['list_length'])
+
+		print(" This is the input matrix :")
+		for row_no in range(iter_):
+			print(matrix[row_no])
+
+		t_mat = [[matrix[j][i] for j in range(3)] for i in range(3)]
+
+		demo_final = input_file['demo_final']['text']
+		print(demo_final + ' :')
+
+		for row_no in range(iter_):
+			print(t_mat[row_no])
+
 
 def qa(question, user):
 	for i in range(len(question)):
@@ -74,40 +104,11 @@ def main():
 	final_message = input_file['final']['text']
 	print(final_message)
 
-	full_name = user['Profile']['first_name'] + ' ' + user['Profile']['last_name']
-	
-	#user['Profile']['full_name'] = full_name
-
 	with open('user.json', 'w') as f:
 		json.dump(user, f, indent = 2)
 
 
-	if 'demo_greet' in input_file:
-		demo_greetings = input_file['demo_greet']['text']
-		print(demo_greetings % full_name)
-
-	if 'demo' in input_file:
-		row = []
-		demo_list = input_file['demo']
-		for n in range(len(demo_list)):
-			if 'text' in demo_list[n]:
-				row.append([ item for item in input(demo_list[n]['text'] + ' :\n').split()])
-
-		matrix = row
-
-		iter_ = int(input_file['demo_final']['list_length'])
-
-		print(" This is the input matrix :")
-		for row_no in range(iter_):
-			print(matrix[row_no])
-
-		t_mat = [[matrix[j][i] for j in range(3)] for i in range(3)]
-
-		demo_final = input_file['demo_final']['text']
-		print(demo_final + ' :')
-
-		for row_no in range(iter_):
-			print(t_mat[row_no])
+	demo(input_file, user)
 
 if __name__ == '__main__':
 	main()
