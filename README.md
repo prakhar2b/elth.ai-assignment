@@ -1,2 +1,4 @@
-# elth.ai-assignment
-Assignment 1 
+# Assignment 1 
+
+> $ python run.py input.jsonaaa
+cccccdd
